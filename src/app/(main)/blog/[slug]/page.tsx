@@ -46,12 +46,20 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   return (
     <article className="bg-[#121212] text-[#f2f2f2]">
       <header className="mx-auto max-w-5xl px-6 pb-10 pt-16">
-        <Link
-          href="/blog"
-          className="mb-8 inline-flex text-sm font-semibold text-[#7fbf4d] hover:text-[#9ee767]"
-        >
-          Back to insights
-        </Link>
+        <div className="mb-8 flex flex-wrap gap-4">
+          <Link
+            href="/blog"
+            className="inline-flex text-sm font-semibold text-[#7fbf4d] hover:text-[#9ee767]"
+          >
+            Back to insights
+          </Link>
+          <Link
+            href="/"
+            className="inline-flex text-sm font-semibold text-[#7fbf4d] hover:text-[#9ee767]"
+          >
+            Back to home
+          </Link>
+        </div>
         <p className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-[#5a7d2f]">
           {post.category}
         </p>

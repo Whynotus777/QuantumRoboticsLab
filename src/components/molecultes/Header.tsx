@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import MenuIcon from '@mui/icons-material/Menu';
+import { usePathname } from 'next/navigation';
 
 import { useState, useEffect } from 'react';
 import { useQuantumStore } from '@/providers/QuantumStoreProvider';
@@ -22,15 +23,16 @@ import {
 
 const navItems = [
   // { label: 'Products', href: '#products' },
-  { label: 'Qortex OS', href: '#qortex' },
-  { label: 'Use Cases', href: '#use-cases' },
+  { label: 'Qortex OS', href: '/#qortex' },
+  { label: 'Use Cases', href: '/#use-cases' },
   { label: 'Blog', href: '/blog' },
-  { label: 'Team', href: '#team' },
-  { label: 'Vision', href: '#vision-mission' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Team', href: '/#team' },
+  { label: 'Vision', href: '/#vision-mission' },
+  { label: 'Contact', href: '/#contact' },
 ];
 
 const Header = () => {
+  const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
@@ -46,14 +48,17 @@ const Header = () => {
   }, []);
 
   const handleButtonClicked = (event: React.MouseEvent<HTMLButtonElement>) => {
-    event.preventDefault();
+    if (pathname !== '/') {
+      return;
+    }
 
     const contactSection = document.getElementById('contact');
 
+    if (!contactSection) return;
+
+    event.preventDefault();
     setTab('comprehensive');
     setMessage('');
-
-    if (!contactSection) return;
 
     const targetPosition =
       contactSection.getBoundingClientRect().top + window.scrollY;
@@ -105,7 +110,7 @@ const Header = () => {
             />
 
             <Typography
-              href="#"
+              href="/"
               variant="h5"
               component="a"
               className="flex items-center"
@@ -150,7 +155,7 @@ const Header = () => {
 
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
             <Button
-              href="#contact"
+              href="/#contact"
               variant="contained"
               onClick={handleButtonClicked}
               sx={{

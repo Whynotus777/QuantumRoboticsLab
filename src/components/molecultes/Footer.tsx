@@ -189,18 +189,18 @@ const Footer = () => {
 
             <Box className="space-y-2 mt-5">
               {[
-                { text: 'About Us', href: '#vision-mission' },
-                { text: 'Our Team', href: '#team' },
+                { text: 'About Us', href: '/#vision-mission' },
+                { text: 'Our Team', href: '/#team' },
                 { text: 'Blog', href: '/blog' },
                 {
                   text: 'Careers',
-                  href: '#contact',
+                  href: '/#contact',
                   message:
                     "I'm interested in career opportunities at Quantum Robotics.",
                 },
                 {
                   text: 'Investor Relations',
-                  href: '#contact',
+                  href: '/#contact',
                   message:
                     "I'm interested in investment opportunities with Quantum Robotics.",
                 },

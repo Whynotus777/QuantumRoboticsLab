@@ -76,13 +76,18 @@ const LatestInsights = () => {
             <Card
               key={index}
               sx={{ borderRadius: 2, backgroundColor: '#1e1e1e' }}
-              className="w-[350px] shadow-md rounded-lg overflow-hidden"
+              className="w-[350px] flex-none shadow-md rounded-lg overflow-hidden"
             >
               <CardMedia
-                height="160"
                 component="img"
                 alt={`${article.title} Robotics`}
                 image={article.image}
+                sx={{
+                  display: 'block',
+                  height: 160,
+                  width: '100%',
+                  objectFit: 'cover',
+                }}
               />
 
               <CardContent
@@ -155,13 +160,18 @@ const LatestInsights = () => {
             <Card
               key={index}
               sx={{ borderRadius: 2, backgroundColor: '#1e1e1e' }}
-              className="w-[350px] shadow-md rounded-lg overflow-hidden"
+              className="w-full shadow-md rounded-lg overflow-hidden"
             >
               <CardMedia
-                height="160"
                 component="img"
                 alt={`${post.title} Robotics`}
                 image={post.image}
+                sx={{
+                  display: 'block',
+                  height: 160,
+                  width: '100%',
+                  objectFit: 'cover',
+                }}
               />
 
               <CardContent

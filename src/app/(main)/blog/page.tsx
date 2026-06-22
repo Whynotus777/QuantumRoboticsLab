@@ -12,6 +12,12 @@ export default function BlogPage() {
   return (
     <main className="bg-[#121212] text-[#f2f2f2]">
       <section className="mx-auto max-w-6xl px-6 pb-12 pt-16">
+        <Link
+          href="/"
+          className="mb-8 inline-flex text-sm font-semibold text-[#7fbf4d] hover:text-[#9ee767]"
+        >
+          Back to home
+        </Link>
         <p className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-[#5a7d2f]">
           Quantum Robotics Insights
         </p>
@@ -42,11 +48,12 @@ export default function BlogPage() {
             className="overflow-hidden rounded-lg border border-[#2d2d2d] bg-[#1e1e1e]"
           >
             <Link href={`/blog/${post.slug}`} className="block">
-              <div className="relative h-48 bg-[#202820]">
+              <div className="relative h-48 overflow-hidden bg-[#202820]">
                 <Image
                   src={post.image}
                   alt=""
                   fill
+                  priority={post.slug === BLOG_POSTS[0].slug}
                   sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                   className="object-cover"
                 />
