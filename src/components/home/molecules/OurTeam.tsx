@@ -114,7 +114,11 @@ const TeamSection = () => {
                     {member.description}
                   </Typography>
 
-                  <Typography variant="body2" className="text-[#b0b0b0]">
+                  <Typography
+                    component="div"
+                    variant="body2"
+                    className="text-[#b0b0b0]"
+                  >
                     <ul className="list-disc pl-5">
                       {member.details?.map((point, i) => (
                         <li key={i}>{point}</li>

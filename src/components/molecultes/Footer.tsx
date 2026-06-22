@@ -191,7 +191,7 @@ const Footer = () => {
               {[
                 { text: 'About Us', href: '#vision-mission' },
                 { text: 'Our Team', href: '#team' },
-                { text: 'Blog', href: '#blog' },
+                { text: 'Blog', href: '/blog' },
                 {
                   text: 'Careers',
                   href: '#contact',
@@ -257,7 +257,7 @@ const Footer = () => {
               <Box className="flex items-center justify-start gap-3 text-[#b0b0b0]">
                 <EmailIcon className="mt-1 text-[#3c5a1e] flex-shrink-0" />
                 <Typography variant="body2">
-                  abdul@quantumroboticslab.com
+                  abdul@quantumroboticslab.ai
                 </Typography>
               </Box>
             </Box>

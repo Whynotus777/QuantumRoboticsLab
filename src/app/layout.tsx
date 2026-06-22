@@ -13,13 +13,13 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://quantumroboticslab.com/'),
+  metadataBase: new URL('https://quantumroboticslab.ai/'),
   title:
     'Quantum Robotics | NLP-Powered Industrial Automation | The Future of Robotics',
   description:
     'Quantum Robotics: Pioneering industrial automation through advanced NLP, computer vision, and edge computing. Our platform dramatically accelerates robot development and deployment, enabling natural language programming and multi-robot coordination. Building the future of American manufacturing with intelligent robotics that understand human intent and transform productivity. The Tesla of industrial automation.',
   openGraph: {
-    url: 'https://quantumroboticslab.com/',
+    url: 'https://quantumroboticslab.ai/',
     images: [{ url: '/assets/logo.svg' }],
     title:
       'Quantum Robotics | NLP-Powered Industrial Automation | The Future of Robotics',

@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { getPlaceholderImage } from '@/utils/placeHolderImage';
 import {
   BLOG_POSTS,
   CATEGORIES,
@@ -24,9 +23,13 @@ const LatestInsights = () => {
   const isTablet = useMediaQuery(theme.breakpoints.down('md'));
 
   const [activeCategory, setActiveCategory] = useState('All Posts');
+  const filteredPosts =
+    activeCategory === 'All Posts'
+      ? BLOG_POSTS
+      : BLOG_POSTS.filter((post) => post.category === activeCategory);
 
   return (
-    <Box className="bg-[#121212] py-20 text-[#f2f2f2] px-6">
+    <Box id="blog" className="bg-[#121212] py-20 text-[#f2f2f2] px-6">
       <Container>
         <Typography
           variant="h4"
@@ -79,7 +82,7 @@ const LatestInsights = () => {
                 height="160"
                 component="img"
                 alt={`${article.title} Robotics`}
-                image={getPlaceholderImage(400, 200)}
+                image={article.image}
               />
 
               <CardContent
@@ -109,6 +112,7 @@ const LatestInsights = () => {
                 </Typography>
 
                 <Button
+                  href={`/blog/${article.slug}`}
                   sx={{
                     mx: 'auto',
                     color: '#5a7d2f',
@@ -147,7 +151,7 @@ const LatestInsights = () => {
         </Box>
 
         <Box className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-          {BLOG_POSTS.map((post, index) => (
+          {filteredPosts.map((post, index) => (
             <Card
               key={index}
               sx={{ borderRadius: 2, backgroundColor: '#1e1e1e' }}
@@ -157,7 +161,7 @@ const LatestInsights = () => {
                 height="160"
                 component="img"
                 alt={`${post.title} Robotics`}
-                image={getPlaceholderImage(400, 200)}
+                image={post.image}
               />
 
               <CardContent
@@ -187,6 +191,7 @@ const LatestInsights = () => {
                 </Typography>
 
                 <Button
+                  href={`/blog/${post.slug}`}
                   sx={{
                     mx: 'auto',
                     color: '#5a7d2f',
@@ -204,6 +209,7 @@ const LatestInsights = () => {
 
         <Box className="text-center mt-10">
           <Button
+            href="/blog"
             variant="contained"
             sx={{
               bgcolor: '#3c5a1e',
